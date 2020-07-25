@@ -9,6 +9,10 @@ const PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// reservation variables
+let tables = [];
+let waitlist = [];
+
 //Routes
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
@@ -23,6 +27,17 @@ app.get("/tables", function (req, res) {
 
 
 
+
+
+//display reservations json
+app.get("api/tables", function (req, res) {
+    return res.json(tables)
+});
+
+//display waitlist json
+app.get("api/waitlist", function (req, res) {
+    return res.json(waitlist)
+});
 
 
 //start listener
