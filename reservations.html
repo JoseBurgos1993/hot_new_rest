@@ -13,8 +13,8 @@
             <h1 class="display-4">Hot Restaurant</h1>
             <hr class="my-4">
             <p>Make your reservation</p>
-            <a class="btn btn-primary btn-lg" href="./tables.html" role="button">View Tables</a>
-            <a class="btn btn-primary btn-lg" href="./home.html" role="button">Home</a>
+            <a class="btn btn-primary btn-lg" href="/tables" role="button">View Tables</a>
+            <a class="btn btn-primary btn-lg" href="/home" role="button">Home</a>
           </div>
     </div>
     <div class="container">
@@ -31,8 +31,30 @@
               <label for="email">Email address</label>
               <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
           </form>
     </div>
+    <script type="text/javascript">
+        $("#submit").on("click", function(){
+            event.preventDefault();
+            const newReservation = {
+                name: $("#name").val().trim(),
+                email: $("#email").val().trim(),
+                phoneNumber: $("#phoneNumber").val().trim()
+            };
+            console.log(newReservation);
+
+            const currentURL = window.loaction.origin;
+
+            $.post(currentURL + "/api/tables", newReservation, function(data){
+                if(data == true){
+                    console.log("It worked!");
+                } else{
+                    console.log("Waiting list.");
+                }
+            });
+            return false;
+        });
+    </script>
 </body>
 </html>
