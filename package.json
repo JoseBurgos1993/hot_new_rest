@@ -1,0 +1,24 @@
+{
+  "name": "hot_new_rest",
+  "version": "1.0.0",
+  "description": "restaurant",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diuguide/hot_new_rest.git"
+  },
+  "author": "team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diuguide/hot_new_rest/issues"
+  },
+  "homepage": "https://github.com/diuguide/hot_new_rest#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}
