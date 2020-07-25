@@ -1,44 +1,24 @@
 {
   "name": "hot_new_rest",
   "version": "1.0.0",
-<<<<<<< HEAD
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "axios": "^0.19.2",
-    "inquirer": "^7.3.3"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-=======
   "description": "restaurant",
   "main": "server.js",
   "scripts": {
     "test": "test",
     "start": "node server.js"
->>>>>>> 1cf987eb81931c255ba480419cfc482f3c320ae2
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/diuguide/hot_new_rest.git"
   },
-<<<<<<< HEAD
-  "author": "",
-=======
   "author": "team",
->>>>>>> 1cf987eb81931c255ba480419cfc482f3c320ae2
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/diuguide/hot_new_rest/issues"
   },
-<<<<<<< HEAD
-  "homepage": "https://github.com/diuguide/hot_new_rest#readme"
-=======
   "homepage": "https://github.com/diuguide/hot_new_rest#readme",
   "dependencies": {
     "express": "^4.17.1",
     "path": "^0.12.7"
   }
->>>>>>> 1cf987eb81931c255ba480419cfc482f3c320ae2
 }

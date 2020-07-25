@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery.js"></script>
     <title>Reservations</title>
 </head>
+
 <body>
     <div class="container">
         <div class="jumbotron">
@@ -15,27 +18,27 @@
             <p>Make your reservation</p>
             <a class="btn btn-primary btn-lg" href="/tables" role="button">View Tables</a>
             <a class="btn btn-primary btn-lg" href="/home" role="button">Home</a>
-          </div>
+        </div>
     </div>
     <div class="container">
         <form>
             <div class="form-group">
-              <label for="name">Name</label>
-              <input type="name" class="form-control" id="name">
+                <label for="name">Name</label>
+                <input type="name" class="form-control" id="name">
             </div>
             <div class="form-group">
-              <label for="phoneNumber">Phone Number</label>
-              <input type="phonenumber" class="form-control" id="phoneNumber">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="phonenumber" class="form-control" id="phoneNumber">
             </div>
             <div class="form-group">
-              <label for="email">Email address</label>
-              <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
             </div>
             <button type="submit" id="submit" class="btn btn-primary">Submit</button>
-          </form>
+        </form>
     </div>
     <script type="text/javascript">
-        $("#submit").on("click", function(){
+        $("#submit").on("click", function () {
             event.preventDefault();
             const newReservation = {
                 name: $("#name").val().trim(),
@@ -44,12 +47,12 @@
             };
             console.log(newReservation);
 
-            const currentURL = window.loaction.origin;
+            const currentURL = window.location.origin;
 
-            $.post(currentURL + "/api/tables", newReservation, function(data){
-                if(data == true){
+            $.post(currentURL + "/api/tables", newReservation, function (data) {
+                if (data == true) {
                     console.log("It worked!");
-                } else{
+                } else {
                     console.log("Waiting list.");
                 }
             });
@@ -57,4 +60,5 @@
         });
     </script>
 </body>
+
 </html>
