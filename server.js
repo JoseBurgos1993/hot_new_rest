@@ -25,17 +25,29 @@ app.get("/tables", function (req, res) {
 });
 
 
+//take in JSON object via POST
+app.post("/api/tables", function (req, res) {
+    let newTable = req.body;
 
+    console.log(newTable);
+    if (tables.length < 5) {
+        tables.push(newTable);
+        res.json(newTable);
+    } else {
+        waitlist.push(newTable);
+        res.json(newTable);
+    }
+})
 
 
 
 //display reservations json
-app.get("api/tables", function (req, res) {
+app.get("/api/tables", function (req, res) {
     return res.json(tables)
 });
 
 //display waitlist json
-app.get("api/waitlist", function (req, res) {
+app.get("/api/waitlist", function (req, res) {
     return res.json(waitlist)
 });
 
